@@ -1,0 +1,41 @@
+{% extends 'compras/base.html' %}
+
+{% block title %}
+	listagem
+{% endblock %}
+
+{% block content %}
+	{% if lista %}
+		<!--<table width="1137" style="border-collapse: collapse">-->
+		<!--<table class="table table-bordered table-condensed table-hover">-->
+		<br/>
+		<thead>
+			<tr>
+				<!--<td style="border: 1px dotted gray" align="center"><font size="4px"><i> Produtos</i></font></td>-->
+				<td><font size="4px"><i>Produtos</i></font></td>
+				<td><font size="4px"><i>Categoria</i></font></td>
+				<td><font size="4px"><i>Onde encontrar</i></font></td>
+				<td><font size="4px"><i>Última cotação</i></font></td>				
+			</tr>
+		</thead>
+		<tbody>
+  		 	<form action="demo_form.asp">
+				{% for objeto in lista %}		
+					<tr>
+						<td>{{objeto.descricao}}</td>
+						<td><a href="{% url 'produtoPorCategoria' objeto.id %}">{{objeto.categoria}}</a></td>
+						<td>
+							<!--<a href="{% url 'editarProduto' objeto.id %}">{{objeto.id}}</a>-->
+							<a href="{% url 'produtoBuscaFornecedores' objeto.id %}">Fornecedor</a>
+						</td>
+						<td><a href="{% url 'cotacao' objeto.id %}">Visualizar</a></td>
+						<!--<td align="center"><input type="checkbox"></td>-->
+					</tr>
+				{% endfor %}				
+			</form>
+		</tbody>
+		<!--</table>-->
+	{% else %}
+		<h1 align="center" id="listaVazia">Lista Vazia</h1>
+	{% endif %}
+{% endblock %}

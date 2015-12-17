@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %} 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head>	
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/master.css"  %}"/><!--{{ STATIC_URL }}css/master.
+    css-->
+    <!--<link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.css" %}"/>  linha comentada-->
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.5-dist/css/bootstrap.min.css" %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!--dataTable-->  
+<!--    <link rel="stylesheet" type="text/css" href="{% static "DataTables-1.10.8/media/css/jquery.dataTables.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "DataTables-1.10.8/media/css/dataTables.bootstrap.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "DataTables-1.10.8/media/css/dataTables.foundation.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "DataTables-1.10.8/media/css/dataTables.jqueryui.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "DataTables-1.10.8/media/css/jquery.dataTables_themeroller.min.css" %}"/>
+
+-->
+
+
+<!--link cdn -->
+<!-- DataTables CSS -->
+<!--<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.8/css/jquery.dataTables.css">-->
+<!--<link rel="stylesheet" type="text/css" href="//code.jquery.com/jquery-1.11.3.min.js">-->
+  
+<!-- jQuery -->
+<!--<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>-->
+<!--<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.8/css/jquery.dataTables.min.css"></script>-->
+  
+<!-- DataTables -->
+<!--<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.8/js/jquery.dataTables.js"></script>-->
+<!--<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>-->
+<!--fim
+https://www.datatables.net/download/index
+https://www.youtube.com/watch?v=-tB6dZHimM4
+https://www.youtube.com/watch?v=NZQbeMmjtAM-->
+
+    <title>
+    	{% block title %}
+    	{% endblock %}
+    </title>
+
+    <!--<link rel="stylesheet" type="text/css" href="/static/DataTables-1.10.8/media/css/dataTables.foundation.min.css"/>-->
+    <!--<link rel="stylesheet" type="text/css" href="/static/DataTables-1.10.8/media/css/dataTables.bootstrap.min.css"/>-->
+    <!--<link rel="stylesheet" type="text/css" href="/static/DataTables-1.10.8/media/css/dataTables.jqueryui.min.css"/>-->
+
+    <!--<link rel="stylesheet" type="text/css" href="{% static "DataTables-1.10.8/media/css/dataTables.foundation.min.css" %}"/>-->
+    <link rel="stylesheet" type="text/css" href="{% static "DataTables-1.10.8/media/css/dataTables.bootstrap.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "DataTables-1.10.8/media/css/dataTables.jqueryui.min.css" %}"/>
+
+</head>
+<body>
+    <!--<div id="sidebar">-->
+    {% block sidebar %}
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"><!-- barra menu-->
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>                
+                    <b><a href="/CCB/" class="navbar-brand">CCB</a></b>
+                <b>
+                </div>  
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <!--<li class="active"><a class="brand" href="/CCB/">Home</a></li>    -->
+                            <li><a href="/CCB/">HOME</a></li>                                
+                            <!--<li><a href="/CCB/listarCategoria">Categorias</a></li>-->
+                            <!--<li><a href="/CCB/listarMedida">Unidade Medida</a></li>-->
+                            <!--<li><a href="/CCB/listarEndereco">Endereços</a></li>-->
+                            <li><a href="/CCB/listarProduto">PRODUTOS</a></li>
+                            <li><a href="/CCB/listarFornecedor">FORNECEDORES</a></li>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">LOGIN<b class="caret"></b></a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+                                    <li class="dropdown-header">Administração</li>
+                                    <li><a href="/loginadmin123siteccb/">Admin</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Logof</li>
+                                    <li><a href="/logout/">Logout</a></li>                                    
+                                </ul>
+                            </li>
+                            <li><a href="#contact" data-toggle="modal">CONTATOS</a></li>                            
+                            <li id="user-info" >
+                                {% if user.is_authenticated %}
+                                    <div>{{user.username}} | <a href="/logout/">logout</a></div>
+                                {% else %}
+                                    <div id="user-info"><a href="/login/">login</a></div>
+                                {% endif %}                                
+                            </li>
+                        </ul>                
+                    </div>
+                </div>
+                </b>        
+            </div>            
+            <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">  <!--footer-->
+                <div class="container">
+                    <div class="navbar-text pull-left">
+                        © 2015 Departamento de Compras CCB MOC
+                    </div>
+                    <div class="navbar-text pull-right">                    
+                        <a href="//facebook.com.br/"><i class="fa fa-facebook-square fa-2x"></i></a> 
+                        <a href="//twitter.com/?lang=pt"><i class="fa fa-twitter fa-2x"></i></a> 
+                        <a href="https://br.linkedin.com/"><i class="fa fa-linkedin-square fa-2x"></i></a> 
+                        <a href="https://plus.google.com/"><i class="fa fa-google-plus fa-2x"></i></a> 
+                        <a href="https://github.com/"><i class="fa fa-github-square fa-2x"></i></a> 
+                        <a href="//skype.com/pt-br/"><i class="fa fa-skype fa-2x"></i></a> 
+                        <a href="https://web.whatsapp.com/🌐/pt-br"><i class="fa fa-whatsapp fa-2x"></i></a> 
+                        <!--<a href="//share.org/"><i class="fa fa-share-alt fa-2x"></i></a>                     
+                        <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+                        <i class="fa fa-refresh fa-spin fa-2x"></i>
+                        <i class="fa fa-cog fa-spin fa-2x"></i>
+                        <i class="fa fa-spinner fa-pulse fa-2x"></i>-->
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        <div class="container jumbotron" id="content header">            
+            <table class="display table table-hover table-bordered compact hover cell-border" id="tabela">
+                {% block content %}
+                {% endblock %}    
+            </table>                                
+        </div>
+    <!--<div class="container">
+        <div class="jumbotron">
+            <div id="content">
+            	<div id="header">
+            		<div id="site-logo">CCB</div>
+            		{% if user.is_authenticated %}
+            			<div id="user-info">{{user.username}} | <a href="/">Submit</a> | <a href="/logout/">logout</a></div>
+            		{% else %}
+            			<div id="user-info"><a href="/login/">login</a></div>
+            		{% endif %}
+            		<div id="site-title"><h1>Congregação Cristã no Brasil</h1></div>
+            	</div>
+                {% block content.. %}
+                
+                {% endblock %}
+            </div>            
+       </div>
+    </div>                      bloco cabeçalho verde-->    
+</div>
+<!--item do menu contato-->
+<div class="modal fade" id="contact" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="form-horizontal" role="form">
+                <div class="modal-header">
+                    <h2 align="center">Contato</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label form"contact-name" class="col-sm-2" control-lable>Nome</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="contac-name" placeholder="First & Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label form"contact-email" class="col-sm-2" control-lable>E-Mail</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="contac-email" placeholder="exemplo@gmail.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label form"contact-mensagem" class="col-sm-2" control-lable>Menasagem</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Fechar</a>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- Incluir todos os plugins compilados (abaixo), ou incluir arquivos individuais conforme necessário -->
+<!--<script src="js/bootstrap.min.js"></script>-->
+<script src=" {% static "bootstrap-3.3.5-dist/js/bootstrap.min.js" %}"></script>
+<!--script do carousel-->
+<script>
+    $(".carousel").carousel({
+        interval: 3000
+    })
+</script>
+
+<!--formatação do dataTables-->
+<!--<script type="text/javascript" src="/static/DataTables-1.10.8/media/js/jquery.js"></script>
+<script type="text/javascript" src="/static/DataTables-1.10.8/media/js/jquery.dataTables.min.js"></script>-->
+<!--<script type="text/javascript" src="/static/DataTables-1.10.8/media/js/dataTables.bootstrap.min.js"></script>-->
+<!--<script type="text/javascript" src="/static/DataTables-1.10.8/media/js/dataTables.foundation.min.js"></script>-->
+
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->
+<script src="{% static "DataTables-1.10.8/media/js/jquery.js" %}"></script>
+<script src="{% static "DataTables-1.10.8/media/js/jquery.dataTables.js" %}"></script>
+<!--<script type="text/javascript" src="{% static "DataTables-1.10.8/media/js/dataTables.bootstrap.min.js" %}" ></script>-->
+<script src="{% static "DataTables-1.10.8/media/js/jquery.dataTables.foundation.min.js" %}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#tabela').DataTable({
+             "lengthMenu": [[15, 25, 50, -1], [15, 25, 50, "All"]]
+        } );
+    } );    
+</script>
+<!--fim da formatação dataTables-->
+
+</body>
+</html>
+<!--http://www.ufpa.br/dicas/htm/htm-cor2.htm     cores-->
+<!--http://fortawesome.github.io/Font-Awesome/icons/  icones http-->
+<!--http://www.w3schools.com/tags/att_input_checked.asp     w3schools-->

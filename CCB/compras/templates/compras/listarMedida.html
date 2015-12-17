@@ -1,0 +1,27 @@
+{% extends 'compras/base.html' %}
+
+{% block title%}lista de medidas{% endblock%}
+
+{% block content %}
+	{% if lista %}
+		<!--<table class="table table-bordered table-condensed table-hover">-->
+		<br/>
+		<thead>
+			<tr>
+				<th><font size="4px"><i>Medida</i></font></th>
+				<th><font size="4px"><i></i></font></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for obj in lista %}
+				<tr>
+					<td>{{obj}}</td>
+					<td><a href="{% url 'editarMedida' obj.id %}"> Editar {{obj.id}}</a></td>
+				</tr>
+			{% endfor %}
+		</tbody>
+		<!--</table>-->
+	{% else %}
+		<p><h1 align="center" id="listaVazia">lista está vazia</h1></p>
+	{% endif %}
+{% endblock %}

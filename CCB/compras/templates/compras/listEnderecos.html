@@ -1,0 +1,51 @@
+{% extends 'compras/base.html' %}
+
+{% block title %}
+	Lista de endereços
+{% endblock %}
+
+{% block content%}
+	{% if lista %}
+		<br/>
+		<!--<table class="display table table-hover table-bordered compact hover cell-border" id="tabela">-->
+		<thead>
+			<tr>
+				<th><font size="4px"><i>Endereço</i></font></th>
+				<th><font size="4px"><i>Referencias</i></font></th>
+				<th><font size="4px"><i>Contatos</i></font></th>
+				<th><font size="4px"><i>E-mail</i></font></th>
+				<th><font size="4px"><i>Telefones</i></font></th>
+				<th><font size="4px"><i></i></font></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for obj in lista %}
+				<tr bgcolor="#FFFFFF">
+					<td>{{obj.rua}}, 
+						{{obj.numero}}
+						{{obj.bairro}}
+						{{obj.cidade}}
+						{{obj.cep}}
+						{{obj.uf}}
+					</td>
+					<td>{{obj.referencia}}</td>
+					<td>{{obj.contato}}</td>
+				
+					<td>{{obj.email}}</td>
+					<td>{{obj.fixo}}
+						{{obj.tim}}
+						{{obj.vivo}}
+						{{obj.claro}}
+						{{obj.oi}}
+					</td>
+					<td><a href="{% url 'listarFornecedor' %}">Retornar</a></td>
+					<!--<td><a href="{% url 'editarEndereco' obj.id %}">Editar {{obj.id}}</a></td>-->
+				</tr>				 
+			{% endfor %}
+		</tbody>
+		<!--</table>-->
+		<!--<div><a href="{% url 'listarFornecedor' %}">Retornar para lista Fornecedores</a></div>-->
+	{% else %}
+		<h1 align="center" id="listaVazia">Lista Vazia</h1>
+	{% endif %}
+{% endblock %}

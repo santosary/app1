@@ -1,0 +1,40 @@
+{% extends 'compras/base.html' %}
+
+{% block title%}
+	cotação
+{% endblock %}
+{% block content%}
+	{% if lista %}
+		<br/>
+		<thead>
+			<tr>
+				<th><font size="4px"><i>Produto</i></font></th>
+				<th><font size="4px"><i>Fornecedor</i></font></th>
+				<th><font size="4px"><i>Data</i></font></th>
+				<th><font size="4px"><i>Unidade</i></font></th>
+				<th><font size="4px"><i>A Vista</i></font></th>
+				<th><font size="4px"><i>A Prazo</i></font></th>
+				<th><font size="4px"><i>Qt Vezes</i></font></th>
+				<th><font size="4px"><i>Atacado</i></font></th>
+				<th><font size="4px"><i>Quantidade</i></font></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for objeto in lista%}
+				<tr>
+					<td>{{objeto.produto.descricao}}</td>
+					<td>{{objeto.fornecedor.nome_fantasia}}</td>
+					<td>{{objeto.data}}</td>
+					<td align="center">{{objeto.medida}}</td>
+					<td>R$ {{objeto.preco_vista}}</td>
+					<td>R$ {{objeto.preco_prazo}}</td>
+					<td align="center">{{objeto.qt_parcelas}}</td>
+					<td>R$ {{objeto.preco_atacado}}</td>
+					<td>{{objeto.quantidade}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	{% else %}		
+		<h1 align="center" id="listaVazia">produto não cotado!</h1>		
+	{% endif %}
+{% endblock%}

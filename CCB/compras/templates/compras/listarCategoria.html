@@ -1,0 +1,30 @@
+{% extends 'compras/base.html' %}
+
+{% block title %}
+	listagem
+{% endblock %}
+
+{% block content %}
+	{% if lista %}
+		<!--<table width="1137" style="border-collapse:collapse"> <!--<table width="600" border="1" bordercolor="blue">-->
+		<!--<table class="table table-condensed table-bordered table-houver">-->
+		<br/>
+		<thead>
+			<tr>
+				<th><font size="4px"><i>Descrição</i></font></th>
+				<th><font size="4px"><i>ID</i></font></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for objeto in lista %}
+				<tr>
+					<td>{{objeto.descricao}}</td>
+					<td><a href="{% url 'editarCategoria' objeto.id %}">Editar {{objeto.id}}</a></td>
+				</tr>		
+			{% endfor %}
+		</tbody>
+		<!--</table>-->
+	{% else %}
+	<h1 align="center" id="listaVazia">Lista Vazia</h1>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'compras/base.html' %}
+
+{% block title %}lista de fornecedores {% endblock%}
+
+{% block content %}
+	{% if lista %}
+		<!--<table class="table table-bordered table-condensed table-hover">-->
+		<br/>
+		<thead>
+			<tr>
+				<th><font size="4px"><i>Nome Fantasia</i></font></th>
+				<th><font size="4px"><i>Razão Social</i></font></th>
+				<th><font size="4px"><i>CNPJ</i></font></th>
+				<th><font size="4px"><i>CPF</i></font></th>
+				<th><font size="4px"><i>End e contato</i></font></th>				
+				<th><font size="4px"><i>Produtos</i></font></th>
+				<!--<th><font size="4px"><i>Editar</i></font></th>-->
+			</tr>
+		</thead>
+		<tbody>
+			{% for obj in lista %}		
+				<tr>
+					<td>{{obj.nome_fantasia}}</td>
+					<td>{{obj.razao_social}}</td>
+					<td>{{obj.cnpj}}</td>
+					<!--<td align="center"style="border: 1px dotted black">{{obj.cpf}}</td>-->
+					<td>{{obj.cpf}}</td>
+					<!--<td width="150">{{obj.contato}}</td>-->
+					<!--<td align="center" style="border: 1px dotted black"><a href="{% url 'listEndForn' obj.id %}">contatos</a></td>-->
+					<td align="center"><a href="{% url 'listEndForn' obj.id %}">visualizar</a></td>					
+					<td align="center"><a href="{% url 'fornecedorBuscaProduto' obj.id %}">listar</a></td>
+					<!--<td><a href="{% url 'editarFornecedor' obj.id %}">Editar {{obj.id}}</a></td>-->
+				</tr>		
+			{% endfor %}
+		</tbody>
+		<tfoot>
+			<tr>
+				<th><font size="4px"><i>Nome Fantasia</i></font></th>
+				<th><font size="4px"><i>Razão Social</i></font></th>
+				<th><font size="4px"><i>CNPJ</i></font></th>
+				<th><font size="4px"><i>CPF</i></font></th>
+				<th><font size="4px"><i>End e contato</i></font></th>
+				<th><font size="4px"><i></i></font></th>
+				<th><font size="4px"><i></i></font></th>
+			</tr>
+		</tfoot>
+		<!--</table>-->
+	{% else %}
+		<h1 align="center" id="listaVazia">Lista vazia</h1>
+	{% endif %}
+{% endblock %}

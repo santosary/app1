@@ -1,0 +1,183 @@
+body {
+	font-family: verdana;
+	font-size: 13px;
+}
+#content {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #F6F6EF;
+}
+#header {
+	width: 100%;
+	background-color: #449D93;
+}
+#site-info {
+	text-align: center;
+	width: 120px;
+}
+#site-logo{
+	display: inline-block;
+	float: left;
+	border: 1px solid #FFFFFF;
+	color: #FFFFFF;
+	font-size: 13px;
+	margin: 1px 3px 0 1px;
+	padding: 0 3px 0 3px;
+}
+#site-title h1 {
+	font-family: verdana;
+	font-size: 15px;
+	padding: 3px 0 3px 0;
+
+}
+#site-title a {
+	color: #000000;
+	text-decoration: none;
+}
+#user-info{
+	display: inline-block;
+	float: right;
+	border: 1px solid #FFFFFF;
+	color: #FFFFFF;
+	font-size: 14.8px;
+	margin: 1px 1px 0 1px;
+	padding: 0 3px 0 3px;
+	margin-top: 14px;
+}
+.navbar-text > a{
+	color: inherit;
+	text-decoration: none;
+}
+.navbar-default{
+	background-color: #2C3E50;
+	border-color: #FFFFFF;
+	color: #FFFFFF;
+}
+.navbar-default .navbar-brand{
+	color: #FFFFFF
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus{
+	color: #18BC9C;
+	background-color: transparent;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #FFFFFF;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{
+	color: #FFFFFF;
+	background-color: #1A242F;
+}
+.vacbar-default .vavbar-nav > li > a:hover,
+.vacbar-default .vavbar-nav > li > a:focus{
+	color: #18BC9C;
+	background-color: transparent;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus{
+	color: #FFFFFF;
+	background
+	color: #1A242F;
+}
+.btn-primary{
+	background-color: #2C3E50;
+	border-color: #2C3E50;
+	color: #FFFFFF;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary{
+	background-color: #1E2A36;
+	color: #FFFFFF;
+	border-color: #161F29;
+}
+.btn-success{
+	background-color: #18BC9C;
+	border-color: #18BC9C;
+	color: #FFFFFF;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success{
+	color: #FFFFFF;
+	background-color: #139B7E;
+	border-color: #139B7E;
+}
+.btn-default{
+	background-color: #95A5A6;
+	border-color: #95A5A6;
+	color: #FFFFFF;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default{
+	color: #FFFFFF;
+	background-color: #7F9293;
+	border-color: #7489BA;
+}
+.thumbnail img:hover{
+	transform: scale(1.1);
+}
+.thumbnail img{
+	transition: all 0.3s ease 0s;
+	width: 100%;
+}
+.thumbnal {
+	overflow: hidden;
+}
+
+        
+/* > Para o input */
+/*    body{ font-family:"Trebuchet MS", Arial, Helvetica, sans-serif }*/
+.input-search{
+  	border:1px solid #CCC;
+    padding:5px 14px;
+    font-size:12px;
+    margin:10px 0;
+    float:right;
+            
+    -webkit-border-radius:15px;
+      -moz-border-radius:15px;
+        -ms-border-radius:15px;
+          -o-border-radius:15px;
+            border-radius:15px;
+}
+.input-search::-webkit-input-placeholder{ font-style:italic }
+.input-search:-moz-placeholder          { font-style:italic }
+.input-search:-ms-input-placeholder     { font-style:italic }
+/* comentado esta parte        
+table.pesquisa{
+	border-collapse:collapse;
+    font-size:12px;
+    font-family:Tahoma, Geneva, sans-serif;
+}
+table.pesquisa th{
+    padding:5px;
+    background:#EEE;
+    border:1px solid #CCC;
+}
+table.pesquisa td{
+	padding:3px;
+    border:1px solid #CCC;
+}
+.cont{
+    width:300px;
+    margin:30px;
+    overflow:hidden;
+}*/
+/* > fim Para o input - http://www.adrianomeira.com/blog/pesquisando-dados-dentro-de-uma-tabela-usando-jquery-quick-search-table-jquery */
+
+#listaVazia{
+	padding-top: 200px;
+	padding-bottom: 250px;
+}

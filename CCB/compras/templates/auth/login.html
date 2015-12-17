@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %} 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static "css/master.css"  %}"/><!--{{ STATIC_URL }}css/master.css-->
+</head>
+<body>
+	<div id="content">
+	   	<div id="header">
+	   		<div id="site-logo">CCB</div>
+	   		<div id="site-title"><h1>Congregação Cristã no Brasil</h1></div>
+	   	</div>
+		<div id="listaVazia"> <!--div para formatar fundo da pagina quando não houver dados cadastrados para pesquisa-->
+			{% if form.errors %}
+				<p align="center">Your username and password didn't match. Please try again.</p>
+				<p align="center"> Usuário e Senha não coincidem. Por favor, tente novamente.</p>
+			{% endif %}
+
+			{% if next %}
+			    {% if user.is_authenticated %}
+			    	<p align="center">Sua conta não tem acesso a esta página. Para continuar, faça login com uma conta que tenha acesso.</p>
+				{% else %}
+			  		<p align="center">Para ter acesso a aplicação, faça login!!!</p>
+				{% endif %}
+			{% endif %}
+			<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+				{% csrf_token %}
+				<table align="center">
+					<tr>
+					    <td>{{ form.username.label_tag }}</td>
+					    <td>{{ form.username }}</td>
+					</tr>
+					<tr>
+					    <td>{{ form.password.label_tag }}</td>
+					    <td>{{ form.password }}</td>
+					</tr>
+				</table>
+				<div align="center">
+					<input type="submit" value="login"/>
+					<input type="hidden" name="next" value="{{ next }}" />
+				</div>
+			</form>		
+	    </div>
+    </div>
+</body>
+</html>
