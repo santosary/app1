@@ -5,7 +5,7 @@
 <head>	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="{% static "css/master.css"  %}"/><!--{{ STATIC_URL }}css/master.
     css-->
@@ -64,7 +64,7 @@ https://www.youtube.com/watch?v=NZQbeMmjtAM-->
     <!--<div id="sidebar">-->
     {% block sidebar %}
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"><!-- barra menu-->
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -107,7 +107,7 @@ https://www.youtube.com/watch?v=NZQbeMmjtAM-->
                 </b>        
             </div>            
             <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">  <!--footer-->
-                <div class="container">
+                <div class="container-fluid">
                     <div class="navbar-text pull-left">
                         © 2015 Departamento de Compras CCB MOC
                     </div>
@@ -128,8 +128,8 @@ https://www.youtube.com/watch?v=NZQbeMmjtAM-->
                 </div>
             </div>
         {% endblock %}
-        <div class="container jumbotron" id="content header">            
-            <table class="display table table-hover table-bordered compact hover cell-border" id="tabela">
+        <div class="container-fluid jumbotron" id="content header">            
+            <table class="display table table-hover compact hover cell-border table-bordered" id="tabela">
                 {% block content %}
                 {% endblock %}    
             </table>                                
@@ -212,7 +212,7 @@ https://www.youtube.com/watch?v=NZQbeMmjtAM-->
 <script src="{% static "DataTables-1.10.8/media/js/jquery.js" %}"></script>
 <script src="{% static "DataTables-1.10.8/media/js/jquery.dataTables.js" %}"></script>
 <!--<script type="text/javascript" src="{% static "DataTables-1.10.8/media/js/dataTables.bootstrap.min.js" %}" ></script>-->
-<script src="{% static "DataTables-1.10.8/media/js/jquery.dataTables.foundation.min.js" %}"></script>
+<!--<script src="{% static "DataTables-1.10.8/media/js/jquery.dataTables.foundation.min.js" %}"></script>-->
 <script type="text/javascript">
     $(document).ready(function() {
         $('#tabela').DataTable({

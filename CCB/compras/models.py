@@ -21,7 +21,7 @@ class Fornecedor(models.Model):
 	#cpf = models.CharField(max_length=14, default= '000.000.000-00', blank=True)
 
 	def __unicode__(self):
-		return '%s %s %s %s' %(self.nome_fantasia,self.razao_social,self.cnpj)
+		return '%s %s %s' %(self.nome_fantasia,self.razao_social,self.cnpj)
 
 class Produto(models.Model):
 	descricao = models.CharField(max_length=50, unique=True)
@@ -40,7 +40,7 @@ class Endereco(models.Model):
 	cep = models.CharField(max_length=10)
 	uf = models.CharField(max_length=2)
 	contato = models.CharField(max_length=80)
-	email = models.EmailField(max_length=75)
+	email = models.EmailField(max_length=75, default='falta@hotmail.com')
 	fixo = models.CharField(max_length=13, default='(38)3000-0000')
 	tim = models.CharField(max_length=14, default='(38)0000-0000')
 	vivo = models.CharField(max_length=24, default='(38)0000-0000')
@@ -57,11 +57,11 @@ class Orcamento(models.Model):
 	fornecedor = models.ForeignKey(Fornecedor)
 	data = models.DateField()
 	medida = models.ForeignKey(Un_medida)
-	preco_vista = models.DecimalField(max_digits=10, decimal_places=2, blank=True, default=0)
-	preco_prazo = models.DecimalField(max_digits=10, decimal_places=2, blank=True, default=0)
+	preco_vista = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+	preco_prazo = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 	qt_parcelas = models.IntegerField(default=1)
-	preco_atacado = models.DecimalField(max_digits=10, decimal_places=2, blank=True)
-	quantidade = models.CharField(max_length=16, blank=True)
+	preco_atacado = models.DecimalField(max_digits=10, decimal_places=2, default=0) # blank=True - o pode ficar em branco
+	quantidade = models.CharField(max_length=16, default=0)
 
 	def __unicode__(self):
 		return '%s %s %s %s %s %s' %(unicode(self.produto), unicode(self.fornecedor), unicode(self.data),unicode(self.preco_vista),

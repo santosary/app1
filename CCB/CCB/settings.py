@@ -44,7 +44,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'compras',
-    'bootstrapform',
+    #'gunicorn',
+    #'bootstrapform',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -95,6 +96,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#STATIC_ROOT = '/deploy/sites/CCB/static/' (comentar a linha STATICFILES_DIR = ...)
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
@@ -110,4 +113,6 @@ STATICFILES_DIRS = (
 #TEMPLATE_DIRS = (
 #    os.path.join(BASE_DIR, 'templates'),
 #) 
+
+
 #http://nullege.com/codes/show/src@t@i@tiote-0.2.4@tiote@forms@mysqlforms.py/61/django.forms.CheckboxSelectMultiple
